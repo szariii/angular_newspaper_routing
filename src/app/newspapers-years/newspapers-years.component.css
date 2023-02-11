@@ -1,0 +1,31 @@
+.divYear {
+  border: 2px solid black;
+  cursor: pointer;
+}
+
+.yearsContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.divWithTable {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+td,
+th {
+  border: 2px solid black;
+}
+
+.selected {
+  background-color: yellow;
+}
+
+.yearLink {
+  text-decoration: none;
+  color: black;
+}

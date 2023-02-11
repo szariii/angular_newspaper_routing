@@ -1,0 +1,91 @@
+<div>
+  <div
+    style="
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    "
+  >
+    <h1>{{ newspaperName }}</h1>
+    <a href=""><button>Cofnij</button></a>
+  </div>
+
+  <div class="yearsContainer">
+    <div *ngFor="let year of arrayWithYears">
+      <a class="yearLink" [href]="newspaperName + '/' + year">
+        <div [class.selected]="year === selectedYear" class="divYear">
+          {{ year }}
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <div class="divWithTable" *ngIf="selectedYearFlag">
+    <table>
+      <tr>
+        <th>strona tytułowa</th>
+        <th>plik</th>
+        <th>pismo</th>
+        <th>darczyńcy</th>
+      </tr>
+      <tr *ngFor="let news of arrayWithNewspapers">
+        <td>
+          <img
+            [src]="
+              'http://atarionline.pl/biblioteka/czasopisma/' +
+              newspaperName +
+              '/' +
+              news.miniaturka
+            "
+            alt="{{ news.miniaturka }}"
+          />
+        </td>
+        <td>
+          <p>
+            format<br />
+            <b>{{ news.format }}</b
+            ><br />
+            stron<br />
+            <b>{{ news.stron }}</b
+            ><br />
+            plik:<br />
+            <a
+              [href]="
+                'http://atarionline.pl/biblioteka/czasopisma/' +
+                newspaperName +
+                '/' +
+                news.plik
+              "
+              >tutaj</a
+            >
+          </p>
+        </td>
+        <td>
+          <p>
+            nazwa<br />
+            <b>{{ news.nazwa }}</b
+            ><br />
+            numer:<br />
+            <b>{{ news.numer }}</b
+            ><br />
+            wydawca<br />
+            <b>{{ news.wydawca }}</b>
+          </p>
+        </td>
+        <td>
+          <p>
+            skan:<br />
+            <b>{{ news.skan }}</b
+            ><br />
+            przetworzenie:<br />
+            <b>{{ news.przetworzenie }}</b
+            ><br />
+            podesłał:<br />
+            <b>{{ news.podeslal }}</b>
+          </p>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

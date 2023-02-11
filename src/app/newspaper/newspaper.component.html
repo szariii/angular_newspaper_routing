@@ -1,0 +1,19 @@
+<div>
+  <p>Idealne zarobki by zrobić dalszą część zadania :)</p>
+  <div style="display: inline">
+    <div
+      style="display: inline"
+      *ngFor="let info of arrayWithNameOfPhotos; odd as o"
+    >
+      <a [href]="info.name">
+        <img
+          [src]="'http://atarionline.pl/biblioteka/czasopisma/img/' + info.img"
+          width="200"
+          height="50"
+          alt="{{ info.img }}"
+        />
+      </a>
+      <br *ngIf="o === true" />
+    </div>
+  </div>
+</div>
